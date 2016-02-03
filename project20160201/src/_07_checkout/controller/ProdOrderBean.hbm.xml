@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/2/1 ?W?? 09:41:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="_07_checkout.controller.ProdOrderBean" table="prod_order_Test">
+        <id name="mem_id" type="int">
+            <column name="MEM_ID" />
+            <generator class="assigned" />
+        </id>
+        <set name="detailBean" table="prod_order_Test" inverse="false" lazy="true">
+            <key>
+                <column name="ord_id" />
+            </key>
+            <one-to-many class="_07_checkout.controller.OrdDetailBean" />
+        </set>
+        <property name="addressee" type="java.lang.String">
+            <column name="ADDRESSEE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="phone" type="int">
+            <column name="PHONE" />
+        </property>
+        <property name="sender" type="java.lang.String">
+            <column name="SENDER" />
+        </property>
+        <property name="sender_address" type="java.lang.String">
+            <column name="SENDER_ADDRESS" />
+        </property>
+        <property name="sender_phone" type="int">
+            <column name="SENDER_PHONE" />
+        </property>
+        <property name="payment" type="java.lang.String">
+            <column name="PAYMENT" />
+        </property>
+        <property name="payment_status" type="java.lang.String">
+            <column name="PAYMENT_STATUS" />
+        </property>
+        <property name="ord_date" type="java.util.Date">
+            <column name="ORD_DATE" />
+        </property>
+        <property name="total" type="int">
+            <column name="TOTAL" />
+        </property>
+        <property name="total_point" type="int">
+            <column name="TOTAL_POINT" />
+        </property>
+    </class>
+</hibernate-mapping>

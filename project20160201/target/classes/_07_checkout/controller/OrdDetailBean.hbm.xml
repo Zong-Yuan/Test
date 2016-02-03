@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/2/1 ?W?? 09:41:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="_07_checkout.controller.OrdDetailBean" table="ord_detail_Test">
+        <id name="mem_id" type="int">
+            <column name="MEM_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="prodBean" class="_07_checkout.controller.ProdOrderBean" fetch="join">
+            <column name="ord_id" />
+        </many-to-one>
+        <property name="seller_id" type="int">
+            <column name="SELLER_ID" />
+        </property>
+        <property name="prod_id" type="int">
+            <column name="PROD_ID" />
+        </property>
+        <property name="prod_name" type="java.lang.String">
+            <column name="PROD_NAME" />
+        </property>
+        <property name="price" type="int">
+            <column name="PRICE" />
+        </property>
+        <property name="count" type="int">
+            <column name="COUNT" />
+        </property>
+        <property name="subtotal" type="int">
+            <column name="SUBTOTAL" />
+        </property>
+        <property name="ord_point" type="int">
+            <column name="ORD_POINT" />
+        </property>
+        <property name="ord_date" type="java.util.Date">
+            <column name="ORD_DATE" />
+        </property>
+    </class>
+</hibernate-mapping>
